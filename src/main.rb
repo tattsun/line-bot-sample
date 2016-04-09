@@ -20,8 +20,8 @@ class LineBot < Sinatra::Base
   post '/callback' do
     data = JSON.parse(request.body.read)
     data["result"].each do |mes|
-      mid = mes["from"]
-      text = mes["text"]
+      mid = mes["content"]["from"]
+      text = mes["content"]["text"]
 
       json = {
         to: [mid],
