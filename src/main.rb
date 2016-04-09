@@ -45,7 +45,8 @@ class LineBot < Sinatra::Base
       req["X-Line-ChannelSecret"] = @config["channel_secret"]
       req["X-Line-Trusted-User-With-ACL"] = @config["channel_mid"]
 
-      https.request(req)
+      res = https.request(req)
+      puts "Response: #{res.body}"
     end
 
     "ok"
