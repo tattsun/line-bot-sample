@@ -9,7 +9,6 @@ class LineBot < Sinatra::Base
   end
 
   post '/callback' do
-    request.body.rewind
     data = JSON.parse(request.body.read)
     p data
   end
