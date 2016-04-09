@@ -34,6 +34,9 @@ class LineBot < Sinatra::Base
         }
       }
 
+      puts "Request: #{JSON.dump(mes)}"
+      puts "JSON: #{JSON.dump(json)}"
+
       uri = URI.parse("#{BOTAPI_ENDPOINT_HOST}/v1/events")
       https = Net::HTTP.new(uri.host, uri.port)
       https.use_ssl = true
