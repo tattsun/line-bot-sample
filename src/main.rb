@@ -47,5 +47,7 @@ class LineBot < Sinatra::Base
 
       https.request(req)
     end
+
+    "ok"
   end
 end
