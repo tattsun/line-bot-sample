@@ -34,7 +34,7 @@ class LineBot < Sinatra::Base
         }
       }
 
-      uri = URI.parse("#{BOT_API_ENDPOINT_HOST}/v1/events")
+      uri = URI.parse("#{BOTAPI_ENDPOINT_HOST}/v1/events")
       https = Net::HTTP.new(uri.host, uri.port)
       https.use_ssl = true
 
